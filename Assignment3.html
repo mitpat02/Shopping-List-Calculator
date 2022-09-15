@@ -1,0 +1,69 @@
+
+<html>
+    <head>
+        <title>Mit Assignment 991634433</title>
+        <style>
+
+#tax,#total,#finaltotal
+{
+   margin-top:0%;
+   margin-left:80%;
+    padding:2px;
+}
+        </style>
+
+        <script>
+          
+    var number = 1;
+     total=0;
+     tax=0;
+     finaltotal = 0;
+    function add()
+    {
+    
+    document.getElementById("num").innerHTML    += number+ "<br>";
+    document.getElementById("first").innerHTML  += document.forms[0][0].value + "<br>";
+    document.getElementById("second").innerHTML += document.forms[0][1].value + "<br>";
+
+    total = total + parseInt(document.forms[0][1].value);
+    document.getElementById("total").innerHTML = "TOTAL IS = " +total+"$";
+
+    tax += total * 0.13;    
+    document.getElementById("tax").innerHTML = "TAX IS = " +tax+"$";
+    
+    finaltotal = total + tax;
+    document.getElementById("finaltotal").innerHTML = "TOTAL(including tax) IS = " +finaltotal+"$";
+    number++;
+    }
+
+        </script>
+    </head>
+    <body style="background-color:blanchedalmond";>
+        <h1 style="text-align:left;color:blue;background-color:aliceblue;">Welcome ToShopping List</h1>
+        <h2 id="total" style="color:tomato;"></h2>
+        <h3 id="tax" style="color:tomato;"></h3>
+        <h4 id="finaltotal" style="color:tomato;"></h4>
+
+        <form>
+        <input type="text" id="itemname">
+        <input type="number" id ="price">
+        <input type="button" value="add" onclick="add();">
+       
+        </form>
+        
+        <table>
+            <tr>
+               <td> <th style="padding:20px;">#</th> <th style="padding: 20px;">Item name</th> <th style="padding: 20px;">price</th> </td> 
+              
+            </tr>
+            <hr>
+            <tr>
+                <td> <th id="num" style="padding:4px;"> </th> <th id="first" style="padding:4px;"></th> <th id="second"></th> </td> 
+               
+             </tr>
+        </table>
+        
+
+
+    </body>
+</html>
